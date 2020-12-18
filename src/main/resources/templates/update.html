@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tickets Service</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<th:block th:replace="partial/header :: nav"></th:block>
+<div class="container">
+    <h1>Tickets Service</h1>
+    <hr>
+    <h2>Update Ticket</h2>
+
+    <form action="#" th:action="@{/saveTicket}" th:object="${ticket}"
+          method="POST">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="date" th:field="*{createdDate}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{createdBy}" class="form-control mb-4 col-4">
+
+        <input type="date" th:field="*{lastModifiedDate}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{lastModifiedBy}" class="form-control mb-4 col-4">
+
+        <input type="date" th:field="*{date}" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{description}" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{comment}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{status}" class="form-control mb-4 col-4">
+
+
+        <button type="submit" class="btn btn-info col-2"> Update Ticket</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/}"> Back to Tickets List</a>
+</div>
+
+<th:block th:replace="partial/footer :: footer"></th:block>
+
+</body>
+</html>
