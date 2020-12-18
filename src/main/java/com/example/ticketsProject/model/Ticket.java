@@ -27,10 +27,10 @@ public class Ticket {
     @Column(name="last_modified_by")
     private String lastModifiedBy;
 
-    @Column(name="date")
+    @Column(name="date" )
     private LocalDateTime date;
 
-    @Column(name="description")
+    @Column(name="description" )
     private String description;
 
     @Column(name="comment")
