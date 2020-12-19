@@ -15,19 +15,19 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="created_date")
+    @Column(name="created_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime createdDate;
 
     @Column(name="created_by")
     private String createdBy;
 
-    @Column(name="last_modified_date")
+    @Column(name="last_modified_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime lastModifiedDate;
 
     @Column(name="last_modified_by")
     private String lastModifiedBy;
 
-    @Column(name="date" )
+    @Column(name="date" , columnDefinition = "TIMESTAMP")
     private LocalDateTime date;
 
     @Column(name="description" )
@@ -37,20 +37,9 @@ public class Ticket {
     private String comment;
 
     @Column(name="status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
 
-//    public Ticket() {
-//    }
-//
-//    public Ticket(String status) {
-//        this.status = status;
-//    }
-//
-//    public String getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(String status) {
-//        this.status = status;
-//    }
+
+
 }
