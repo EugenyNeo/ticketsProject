@@ -31,7 +31,6 @@ public class TicketComment {
 
 	private LocalDateTime date;
 
-	@Column(columnDefinition = "TEXT")
 	private String comment;
 
 }
