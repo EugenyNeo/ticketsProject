@@ -17,9 +17,6 @@ public class TicketController {
     @Autowired
     private TicketService ticketService;
 
-    @Autowired
-    static LocalDateTimeAttributeConverter localDateTimeAttributeConverter;
-
     @GetMapping("/")
     public String viewHomePage(Model model){
         model.addAttribute("listTickets", ticketService.getAllTickets());

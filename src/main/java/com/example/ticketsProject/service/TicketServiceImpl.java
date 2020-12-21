@@ -1,6 +1,7 @@
 package com.example.ticketsProject.service;
 
 import com.example.ticketsProject.model.Ticket;
+import com.example.ticketsProject.model.TicketStatus;
 import com.example.ticketsProject.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,8 @@ public class TicketServiceImpl implements  TicketService{
 
     @Autowired
     private TicketRepository ticketRepository;
+
+    private TicketStatus status = TicketStatus.OPEN;
 
     @Override
     public List<Ticket> getAllTickets(){

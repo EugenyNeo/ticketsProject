@@ -1,6 +1,8 @@
 package com.example.ticketsProject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -39,7 +41,6 @@ public class Ticket {
     @Column(name="status")
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
-
 
 
 }
