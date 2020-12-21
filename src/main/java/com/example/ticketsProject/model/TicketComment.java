@@ -31,7 +31,6 @@ public class TicketComment {
 	private String lastModifiedBy;
 
 	@ManyToOne
-	@Column(name="ticket")
 	private Ticket ticket;
 
 	@Column(name="date" , columnDefinition = "TIMESTAMP")
