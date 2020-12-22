@@ -20,17 +20,17 @@
 
         <input type="hidden" th:field="*{id}" />
 
-        <input type="date" th:field="*{createdDate}" class="form-control mb-4 col-4">
+        <input type="datetime-local" th:field="*{createdDate}" class="form-control mb-4 col-4">
         <input type="text" th:field="*{createdBy}" class="form-control mb-4 col-4">
 
-        <input type="date" th:field="*{lastModifiedDate}" class="form-control mb-4 col-4">
+        <input type="datetime-local" th:field="*{lastModifiedDate}" class="form-control mb-4 col-4">
         <input type="text" th:field="*{lastModifiedBy}" class="form-control mb-4 col-4">
 
-        <input type="date" th:field="*{date}" class="form-control mb-4 col-4">
+        <input type="datetime-local" th:field="*{date}" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{description}" class="form-control mb-4 col-4">
+        <textarea type="text" th:field="*{description}" class="form-control mb-4 col-4"></textarea>
 
-        <input type="text" th:field="*{comment}" class="form-control mb-4 col-4">
+        <textarea type="text" th:field="*{comment}" class="form-control mb-4 col-4"></textarea>
         <input type="text" th:field="*{status}" class="form-control mb-4 col-4">
 
 

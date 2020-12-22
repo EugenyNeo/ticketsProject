@@ -1,6 +1,5 @@
 package com.example.ticketsProject.controller;
 
-import com.example.ticketsProject.model.LocalDateTimeAttributeConverter;
 import com.example.ticketsProject.model.Ticket;
 import com.example.ticketsProject.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class TicketController {
 
     @GetMapping("/showFormForUpdate/{id}")
     public String showFormForUpdate(@PathVariable(value ="id") long id,  Model model){
-        Ticket ticket =ticketService.getTicketById(id);
+        Ticket ticket = ticketService.getTicketById(id);
 
         model.addAttribute("ticket", ticket);
         return "update";

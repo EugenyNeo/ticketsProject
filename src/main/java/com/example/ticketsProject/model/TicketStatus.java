@@ -13,6 +13,9 @@ public enum TicketStatus {
 
 	private String status;
 
+	TicketStatus() {
+	}
+
 	TicketStatus(String status) {
 		this.status = status;
 	}
