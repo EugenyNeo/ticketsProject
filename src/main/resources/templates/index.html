@@ -17,8 +17,6 @@
 
     <h1>Tickets list</h1>
 
-    <a th:href = "@{/showNewTicketForm}" class="btn btn-primary btn-sm mb-3"> Add Ticket </a>
-
     <table border="1" class = "table table-striped table-responsive-md">
         <thead>
         <tr>
@@ -50,7 +48,14 @@
         </tr>
         </tbody>
     </table>
+
+    <div>
+        <a th:href = "@{/showNewTicketForm}" class="btn btn-primary btn-sm mb-3"> Add Ticket </a>
     </div>
+
+    </div>
+
+
 
 <th:block th:replace="partial/footer :: footer"></th:block>
 

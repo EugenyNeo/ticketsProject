@@ -1,35 +1,39 @@
 package com.example.ticketsProject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="ticket")
-public class Ticket implements Serializable {
+public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="created_date", columnDefinition = "TIMESTAMP")
+    @Column(name="created_date" )
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime createdDate;
 
     @Column(name="created_by")
     private String createdBy;
 
-    @Column(name="last_modified_date", columnDefinition = "TIMESTAMP")
+    @Column(name="last_modified_date")
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime lastModifiedDate;
 
     @Column(name="last_modified_by")
     private String lastModifiedBy;
 
-    @Column(name="date" , columnDefinition = "TIMESTAMP")
+    @Column(name="date"  )
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime date;
 
@@ -44,3 +48,4 @@ public class Ticket implements Serializable {
     private TicketStatus status;
 
 }
+

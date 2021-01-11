@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Collections;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("tickets/{ticket:id}/comments")
@@ -35,20 +36,19 @@ public class TicketCommentsController {
         if (comment == null) {
             throw new EntityNotFoundException("error.ticketComment.notFound");
         }
-        if (ticket == null ) {
+        if (ticket == null || !Objects.equals(comment, ticket)) {
             throw new EntityNotFoundException("error.ticket.notFound");
         }
 
         return new ModelAndView("tickets/comments/delete", Collections.singletonMap("comment", comment));
     }
 
-
     @PostMapping("{comment:id}/delete")
     public ModelAndView delete(@PathVariable Ticket ticket, @PathVariable TicketComment comment) throws EntityNotFoundException {
         if (comment == null) {
             throw new EntityNotFoundException("error.ticketComment.notFound");
         }
-        if (ticket == null) {
+        if (ticket == null || !Objects.equals(comment, ticket)) {
             throw new EntityNotFoundException("error.ticket.notFound");
         }
 

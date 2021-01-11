@@ -17,7 +17,7 @@ public class TicketServiceImpl implements  TicketService{
     @Override
     public List<Ticket> getAllTickets(){
 
-        return ticketRepository.findAll();
+        return (List<Ticket>) ticketRepository.findAll();
     }
 
     @Override

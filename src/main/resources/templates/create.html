@@ -8,6 +8,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 </head>
+
 <body>
 <th:block th:replace="partial/header :: nav"></th:block>
 <div class="container">
@@ -18,19 +19,39 @@
     <form action="#" th:action="@{/saveTicket}" th:object="${ticket}"
           method="POST">
 
-        <input type="datetime-local" th:field="*{createdDate}"
+        <input type="text" th:field="*{createdDate}"
                placeholder="Created By Date" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{createdBy}"
-               placeholder="Created By Name" class="form-control mb-4 col-4">
+        <h6 style="color: gray">Created By</h6>
+        <div style="display: inline-block;margin-left: 100px;">
+            <span style="display: inline-block;width: 130px;">
+                <input  type="radio" th:field="*{createdBy}" id="createdBy_admin" placeholder="Created By Name" class="form-control mb-4 col-4" value="ADMIN"/>
+                <label for="createdBy_admin">Admin</label>
+            </span>
 
-        <input type="datetime-local" th:field="*{lastModifiedDate}"
+            <span style="display: inline-block;width: 150px;">
+                <input type="radio" th:field="*{createdBy}" id="createdBy_user" placeholder="Created By Name" class="form-control mb-4 col-4" value="USER"/>
+                <label  for="createdBy_user">User</label>
+            </span>
+         </div>
+
+        <input type="text" th:field="*{lastModifiedDate}"
                placeholder="Last Modified By Date" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{lastModifiedBy}"
-               placeholder="Last Modified By Name" class="form-control mb-4 col-4">
+        <h6 style="color: gray">Last Modified By</h6>
+        <div style="display: inline-block;margin-left: 100px;">
+            <span style="display: inline-block;width: 130px;">
+                <input  type="radio" th:field="*{lastModifiedBy}" id="lastModifiedBy_admin" placeholder="Created By" class="form-control mb-4 col-4" value="ADMIN"/>
+                <label for="createdBy_admin">Admin</label>
+            </span>
 
-        <input type="datetime-local" th:field="*{date}"
+            <span style="display: inline-block;width: 150px;">
+                <input type="radio" th:field="*{lastModifiedBy}" id="lastModifiedBy_user" placeholder="Last Modified By" class="form-control mb-4 col-4" value="USER"/>
+                <label  for="createdBy_user">User</label>
+            </span>
+        </div>
+
+        <input type="text" th:field="*{date}"
                placeholder="Date" class="form-control mb-4 col-4">
 
         <textarea type="text" th:field="*{description}"
@@ -38,9 +59,15 @@
 
         <textarea type="text" th:field="*{comment}"
                   placeholder="Add Comments" class="form-control mb-4 col-4"></textarea>
-
-        <input type="text" th:field="*{status}"
-               placeholder="Status" class="form-control mb-4 col-4">
+                    <div>
+                        <label  for="status">Status:</label>
+                        <input style="margin: 25px 0 25px 25px; width: 200px;" list="status_" name="browser" id="status"  th:field="*{status}">
+                        <datalist id="status_">
+                            <option value="OPEN">
+                            <option value="ASSIGNED">
+                            <option value="CLOSED">
+                        </datalist>
+                    </div>
 
         <button type="submit" class="btn btn-info col-2"> Save Ticket</button>
     </form>
